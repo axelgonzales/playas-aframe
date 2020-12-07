@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Peru</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-webcentric-component@0.0.5/dist/aframe-webcentric-component.min.js"></script>
+  </head>
+  <body>
+    <a-scene webcentric>
+      <a-assets>
+        <img
+          id="marnegro"
+          crossorigin="anonymous"
+          src="resource/playamarnegro.jpg"
+        />
+        <img
+          id="cancun"
+          src="resource/cancun.jpg"
+        />
+        <img
+          id="mancora"
+          src="resource/mancora.jpg"
+        />
+        <img
+          id="playas"
+          src="resource/jaimca.jpg"
+        />
+    
+      </a-assets>
+      <a-sphere
+        src="#marnegro"
+        radius="1"
+        position="-2.5 1 -5.5"
+        animation="attribute:rotation;property: rotation; to: 0 360 0; direction:alternate;loop: true; dur: 20000;repeat:indefinite"
+      >
+        <a-link image="#marnegro" href="marnegro.html" title="Mar negro"></a-link>
+        <a-link image="#marnegro" href="marnegro.html" title="Mar negro"   rotation="0 180 0"></a-link>
+     </a-sphere>
+      <a-box
+        position="0 1 -5.5"
+        src="#cancun"
+        height="2"
+        depth="2"
+        width="2"
+        material
+        geometry
+        animation="attribute:rotation;property: rotation; to: 0 360 0; direction:alternate;loop: true; dur: 20000;repeat:indefinite"
+        rotation="0 0 0"
+        
+      >
+      <a-link image="#cancun" href="cancun.html" title="Cancun"   rotation="0 0 0"></a-link>
+      <a-link image="#cancun" href="cancun.html" title="Cancun"   rotation="0 180 0"></a-link>
+      ></a-box>
+
+      <a-link
+      position="3 1 -5.5"
+      image="#mancora"
+      href="mancora.html"
+      title="Mancora"
+    ></a-link>
+
+
+      <a-box
+        position="-2.5 -1.0 -5.5"
+        rotation="0 10 0"
+        height="2"
+        src="#mancora"
+      ></a-box>
+
+      <a-box
+        position="0 -1.0 -5.5"
+        rotation="0 0 0"
+        height="2"
+        src="#mancora"
+      ></a-box>
+
+      <a-box
+        position="3 -1.0 -5.5"
+        rotation="0 -10 0"
+        height="2"
+        src="#mancora"
+      ></a-box>
+
+      <a-sky src="#playas"></a-sky>
+      <a-camera>
+        <a-cursor></a-cursor>
+      </a-camera>
+    </a-scene>
+  </body>
+</html>

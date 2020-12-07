@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portales</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <img
+          id="playas"
+          src="resource/PLAYA.jpg"
+        />
+      
+      </a-assets>
+      <a-entity environment="preset: forest; playArea: 10; fog: 0"></a-entity>
+      <a-entity
+        position="1.5 5.5 -20"
+        particle-system="preset: dust; particleCount: 10000;velocityValue:80 0 0"
+      ></a-entity>
+
+      <a-sphere
+        src="#playas"
+        radius="1"
+        position="0 2 -4"
+        animation="attribute:rotation;property: rotation; to: 0 360 0; direction:alternate;loop: true; dur: 20000;repeat:indefinite"
+      >
+        <a-link
+          image="#playas"
+          href="playas.html"
+          title="Playas del mundo"
+        ></a-link
+      ></a-sphere>
+      <a-box src="#playas" position="0 0.5 -4" width="3" height="1" color="white">
+      </a-box>
+      <a-camera>
+        <a-cursor></a-cursor>
+      </a-camera>
+      <a-sky color="#000000"></a-sky>
+    </a-scene>
+  </body>
+</html>
